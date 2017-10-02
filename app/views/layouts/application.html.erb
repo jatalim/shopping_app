@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ShoppingApp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <!-- flash start --> 
+  	<% flash.each do |name, msg| %>
+  		<%= content_tag :div, msg, class: "alert alert-info"%>
+  	 <% end %>
+<!-- flash end --> 
+
+    <div class="nav navbar navbar-inverse">
+        <div class="navbar-brand"> 
+          <%= link_to "Home", root_path %> 
+         </div>
+			<ul class="nav navbar-nav navbar-right">
+                <li><%= link_to "#", class: 'btn btn-lg' do%>
+                <i class = "glyphicon glyphicon-shopping-cart"></i>
+                <%end%></li>
+
+            <% if public_user_signed_in? %>
+              <li><%= link_to "Your Account", edit_public_user_registration_path %></li>
+              <li><%= link_to "Sign Out", destroy_public_user_session_path, method: :delete %></li>  
+        
+            <% else %>
+        	<li><%= link_to "Join", new_public_user_registration_path %></li>
+            <li><%= link_to "Login", new_public_user_session_path %></li>
+            </ul>
+            <% end %>     
+    </div>
+
+<!-- yield start --> 
+    	<%= yield %>
+<!-- yield start --> 
+
+  </body>
+</html>
