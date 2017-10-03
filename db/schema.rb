@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(version: 20171003072006) do
     t.string "uid"
     t.string "name"
     t.text "image"
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_public_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_public_users_on_reset_password_token", unique: true
   end
