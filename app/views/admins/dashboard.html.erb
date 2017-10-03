@@ -1,0 +1,89 @@
+<h2><center> Admin Dashboard </center> </h2>
+
+<section id="widgets" class="container">
+  <div class="row">
+  <!--// widget 1 //-->
+    <article class="col-md-4">
+      <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><center>Users</center></h3>
+          </div>
+          <div class="panel-body">
+            <div class="numeric-widget">
+            <center><h1><%= PublicUser.count %> </h1></center>
+            </div>
+          </div>
+      </div>
+    </article>
+  <!--// widget 2 //-->
+       <article class="col-md-4">
+      <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><center>Products 
+             <%= link_to new_product_path, class: 'btn btn-primary btn-xs' do%>
+                <i class = "glyphicon glyphicon-plus"></i> 
+                <%end%>
+            </center></h3>
+          </div>
+          <div class="panel-body">
+            <div class="numeric-widget">
+            <center><h1> <%= Product.count %></h1></center>
+            </div>
+          </div>
+      </div>
+    </article>
+
+  <!--// widget 3 //-->
+<article class="col-md-4">
+      <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><center>Orders</center></h3>
+          </div>
+          <div class="panel-body">
+            <div class="numeric-widget">
+            <center><h1>8</h1></center>
+            </div>
+          </div>
+      </div>
+    </article>
+  </div> <!--// end row //-->
+  <div class="row">
+    <article class="col-md-6">
+     <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><center>Orders in Progress</center></h3>
+          </div>
+          <div class="panel-body">
+            <table class="table">
+            <thead><th>Order ID</th><th>Order Date</th><th>Expected Delivery Date</th></thead>
+            <tbody>
+              <tr class="day-past"><td>484</td><td>10 Oct 2017</td><td>20 Oct 2017</td></tr>
+              <tr><td>894</td><td>10 Oct 2017</td><td>21 Oct 2017</td></tr>
+              <tr><td>999</td><td>10 Oct 2017</td><td>22 Oct 2017</td></tr>
+              <tr><td>949</td><td>10 Oct 2017</td><td>30 Oct 2017</td></tr>
+            </tbody>
+          </table>
+
+          </div>
+      </div>
+    </article>
+    <article class="col-md-6">
+      <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><center>Completed Orders</center></h3>            
+          </div> 
+          <div class="panel-body">
+          <table class="table">
+            <thead><center><th>Order ID</th><th>Order Date</th><th>Delivery Date</th></center></thead>
+            <tbody>
+              <tr class="day-past"><td>484</td><td>10 Oct 2017</td><td>20 Oct 2017</td></tr>
+              <tr><td>894</td><td>1 Sept 2017</td><td>21 Sept 2017</td></tr>
+              <tr><td>999</td><td>2 Sept 2017</td><td>22 Sept 2017</td></tr>
+              <tr><td>949</td><td>2 Sept 2017</td><td>30 Sept 2017</td></tr>
+            </tbody>
+          </table>
+      </div>
+      </div>
+    </article>
+  </div>
+</section>
