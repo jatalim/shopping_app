@@ -1,0 +1,33 @@
+
+<% product = Product.find(cartprod.product_id) %>
+<tr id="productItem" class="row">
+
+    <td class="itemImage ">
+      <%= image_tag product.image.thumb %>
+    </td>
+
+    <td class="itemText ">
+      <h3><%= product.name %></h3>
+      <p><%= product.description %></p>
+    </td>
+
+    <td class="itemPrice ">
+      <p>$<%= product.price %></p>
+    </td>
+
+    <td class="itemQuantity ">
+      <!-- Change this to form - quantity able to be edited -->
+      <p><%= cartprod.product_quantity %></p>
+    </td>
+
+    <td class="itemTotal ">
+      <p>$<%= product.price*cartprod.product_quantity %></p>
+    </td>
+
+    <td class="itemDelete ">
+      <!-- destroy function -->
+      <p><i class="glyphicon glyphicon-remove"></i></p>
+    </td>
+
+
+</tr>
