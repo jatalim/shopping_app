@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171003062121) do
+
+ActiveRecord::Schema.define(version: 20171003072006) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +33,35 @@ ActiveRecord::Schema.define(version: 20171003062121) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
+  create_table "carted_products", force: :cascade do |t|
+    t.integer "product_quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "product_id"
+    t.bigint "public_user_id"
+    t.index ["product_id"], name: "index_carted_products_on_product_id"
+    t.index ["public_user_id"], name: "index_carted_products_on_public_user_id"
+  end
+
+  create_table "product_taggings", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "tag_id"
+    t.bigint "product_id"
+    t.index ["product_id"], name: "index_product_taggings_on_product_id"
+    t.index ["tag_id"], name: "index_product_taggings_on_tag_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.decimal "price"
+    t.integer "quantity"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "public_users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -45,9 +75,22 @@ ActiveRecord::Schema.define(version: 20171003062121) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "admin", default: false
+    t.string "provider"
+    t.string "uid"
+    t.string "name"
+    t.text "image"
     t.index ["email"], name: "index_public_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_public_users_on_reset_password_token", unique: true
   end
 
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "carted_products", "products"
+  add_foreign_key "carted_products", "public_users"
+  add_foreign_key "product_taggings", "products"
+  add_foreign_key "product_taggings", "tags"
 end
