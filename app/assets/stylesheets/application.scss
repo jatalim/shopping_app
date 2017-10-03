@@ -17,33 +17,3 @@
 @import url(https://fonts.googleapis.com/css?family=Lato); 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
-
-@media (min-width: 992px) {
-    body {
-        padding-top: 56px;
-    }
-}
-
-.card {
-    height: 100%;
-}
-
-.navbar-right {
-	padding-right: 10px;
-}
-
-.jumbotron {
-background-image: asset-url("jumboshirt.jpg");
-background-size: cover;
-margin-top: -50px;
-}
-
-.jumbowords {
-	padding: 20px;
-}
-
-.navbar-inverse {
-	margin-top: -60px;
-	padding: 5px;
-}
