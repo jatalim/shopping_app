@@ -1,7 +1,6 @@
 
 body {
 	font-size: 16px;
-	font-weight: 300;
 }
 
 
@@ -10,64 +9,31 @@ body {
 main {
 	display: block;
 	min-height: calc(100vh - 80px);
-
 	width: calc((100% - 80px) / 2);
 	margin-left: calc(((100% - 80px) / 2) + 80px);
-
-	background-color: #FFF;
-
 	text-align: center;
 	font-size: 16px;
-
-	/* border: 4px solid salmon; */
 }
 
 main .inner {
 	width: calc(100% - 48px);
 	max-width: 480px;
 	margin: 120px auto 80px auto;
-
-	/*border: 2px solid wheat;*/
 }
 
-main h1,
-main h2,
-main h3,
-main h4,
-main p {
-	margin: 0;
-	padding: 0;
-}
-main h1 {
-	font-family: 'Regal Text Black', 'Times New Roman', Serif;
-	font-weight: normal;
-	font-size: 48px;
 
-	margin-bottom: 12px;
-}
-main .intro {
-	font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, Sans-Serif;
-	font-weight: 300;
-	font-size: 16px;
-	line-height: 24px;
-	letter-spacing: 0.075em;
-	color: #000;
-	text-align: left;
-}
 main h3 {
-	font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, Sans-Serif;
 	font-weight: 400;
 	font-size: 12px;
 	text-transform: uppercase;
 	letter-spacing: 0.275em;
-
 	display: table;
 	white-space: nowrap;
 	overflow: hidden;
-
 	margin-top: 42px;
 	margin-bottom: 36px;
 }
+
 main h3:before,
 main h3:after {
   border-top: 2px solid #D8D8D8;
@@ -77,41 +43,12 @@ main h3:after {
   top: 0.60em;
   width: 45%;
 }
+
 main h3:before {
   right: 1.75%;
 }
 main h3:after {
   left: 1.5%;
-}
-main h2 {
-	font-family: 'Regal Text Black', 'Times New Roman', Serif;
-	font-weight: normal;
-	font-size: 32px;
-
-	margin-top: 28px;
-}
-main h2 span {
-	display: inline-block;
-	position: relative;
-
-	/*border: 2px solid lightgreen;*/
-}
-main h2 span .info {
-	display: block;
-	width: 16px;
-	height: 16px;
-	text-indent: -999em;
-
-	background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDIxLjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAxNiAxNiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMTYgMTY7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHBhdGggZD0iTTcuNSwxMi4xYzAuNCwwLDEuMi0wLjQsMi0xLjNjLTAuMS0wLjEtMC4xLTAuMi0wLjItMC4yYy0wLjMsMC4zLTAuNiwwLjQtMC45LDAuNmMwLjItMS4yLDAuNC0yLjEsMC42LTIuOQoJYzAtMC4yLDAtMC4zLDAtMC41QzksNy40LDguNiw3LDgsN0M3LjQsNyw2LjcsNy41LDYsOC40bDAuMiwwLjNjMC40LTAuMywwLjYtMC41LDAuOS0wLjdsLTAuNSwyLjZjMCwwLjItMC4xLDAuNS0wLjEsMC43CglDNi42LDExLjksNi45LDEyLjEsNy41LDEyLjF6IE03LjQsNS40YzAsMC41LDAuNCwwLjksMC45LDAuOWMwLjYsMCwxLjItMC41LDEuMi0xLjJjMC0wLjUtMC40LTAuOS0wLjktMC45QzcuOSw0LjIsNy40LDQuOCw3LjQsNS40Cgl6IE04LDE1YzMuOSwwLDctMy4xLDctN3MtMy4xLTctNy03UzEsNC4xLDEsOFM0LjEsMTUsOCwxNXogTTgsMTZjLTQuNCwwLTgtMy42LTgtOHMzLjYtOCw4LThzOCwzLjYsOCw4UzEyLjQsMTYsOCwxNnoiLz4KPC9zdmc+Cg==') no-repeat 0 0 transparent;
-	background-size: 16px 16px;
-
-	position: absolute;
-	right: -26px;
-	bottom: 10px;
-  
-  cursor: pointer;
-
-	/*border: 2px solid lightblue;*/
 }
 
 main .config-options-wrapper {
@@ -124,29 +61,24 @@ main .config-options-wrapper ul li {
 	list-style: none;
 	margin: 0;
 	padding: 0;
-
 	font-size: 0px;
-
-	/*border: 1px solid salmon;*/
 }
+
 main .config-options-wrapper ul {
 	max-width: 325px;
 	margin: 14px auto 0 auto;
 }
+
 main .config-options-wrapper ul li {
 	display: inline-block;
 	vertical-align: top;
-
 	margin-bottom: 12px;
-
 	width: 65px;
-
 	font-size: 12px;
 	font-weight: 400;
 	letter-spacing: 0.075em;
-
-	/*border: 1px solid lightgreen;*/
 }
+
 main .config-options-wrapper input {
 	display: none;
 	width: 0;
@@ -155,31 +87,21 @@ main .config-options-wrapper input {
 main .config-options-wrapper label {
 	display: inline-block;
 	width: 100%;
-
 	position: relative;
-  
   cursor: pointer;
-
-	/*border: 2px solid lightblue;*/
 }
+
 main .config-options-wrapper label img {
 	display: block;
 	width: 44px;
 	height: 44px;
 	margin: 0 auto 8px auto;
 	border-radius: 100%;
-
 	background: #e5e5e5;
 }
 main .config-options-wrapper label span {
 	display: block;
 }
-
-
-
-/*main .config-options-wrapper input:checked + label {
-	border: 2px solid red;
-}*/
 
 
 main .config-options-wrapper label .faux-checked {
@@ -189,8 +111,6 @@ main .config-options-wrapper label .faux-checked {
 	border-radius: 100%;
 
 	overflow: visible;
-
-	
 
 	-webkit-transform: translateX(-50%) translateY(-50%) scale(1.0);
 	-moz-transform: translateX(-50%) translateY(-50%) scale(1.0);
@@ -207,9 +127,7 @@ main .config-options-wrapper label .faux-checked {
 	background: transparent;
 	background: url(#) no-repeat 0 0 transparent;
 	background-size: 100% 100%;
-
 	
-
 	border-image-slice: 1;
 
 	-webkit-transition: 
@@ -270,8 +188,6 @@ main .config-options-wrapper label .faux-checked:after {
 
 	opacity: 0.0;
 
-	
-
 	-webkit-transition: 
 		width 0.2s ease-out 0.15s, 
 		height 0.2s ease-out 0.15s, 
@@ -329,334 +245,3 @@ main .config-options-wrapper input:checked ~ label .faux-checked:after {
 	height: 14px;
 	opacity: 1.0;
 }
-
-
-
-
-
-main .config-options-wrapper ul.list-crystal {
-	max-width: calc(325px - 21px);
-	margin: 14px auto 0 auto;
-
-	/*border: 2px solid lightgreen;*/
-}
-main .config-options-wrapper ul.list-crystal li {
-	display: block;
-
-	margin-bottom: 12px;
-
-	width: 100%;
-
-	text-align: left;
-
-	position: relative;
-
-	/*border: 2px solid salmon;*/
-}
-main .config-options-wrapper ul.list-crystal li label {
-	width: auto;
-
-	/*border: 2px solid lightblue;*/
-}
-
-main .config-options-wrapper ul.list-crystal li label.thumb {
-	position: absolute;
-	left: 0;
-	top: 0;
-}
-
-
-main .config-options-wrapper ul.list-crystal li label.label-txt {
-	position: relative;
-
-	padding-left: 61px;
-	padding-top: 14px;
-
-	font-size: 12px;
-	font-weight: 300;
-	line-height: 16px;
-	color: #000;
-	letter-spacing: 0.015em;
-}
-main .config-options-wrapper ul.list-crystal li label.label-txt strong,
-main .config-options-wrapper ul.list-crystal li label.label-txt u {
-	position: relative;
-	display: block;
-
-	font-weight: 700;
-	text-decoration: none;
-	color: #000;
-}
-main .config-options-wrapper ul.list-crystal li label.label-txt u {
-	position: absolute;
-	top: 0;
-	right: 0;
-
-	display: block;
-}
-
-main .config-options-wrapper ul.list-crystal li label span {
-	position: relative;
-
-	/*border: 2px solid wheat;*/
-}
-
-
-
-
-
-/* Gradient Border Button
------------------------------*/
-
-.bttn.order {
-  display: block;
-  
-  position: relative;
-  z-index: 0;
-  
- color: #000;
- font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, Sans-Serif;
- font-weight: 400;
- font-size: 14px;
- text-transform: uppercase;
- letter-spacing: 0.275em;
-  
-  padding: 13px 40px;
-  
-  border-radius: 500px;
-
-  -webkit-transition: 
-    all 0.25s ease-out 0.05s;
-  transition: 
-    all 0.25s ease-out 0.05s;
-}
-.bttn.order * {
-  position: relative;
-  z-index: 1;
-}
-
-
-.bttn.order:after {
-  display: block;
-  content: '';
-  
-  border-radius: 500px;
-  
-  position: absolute;
-  top: 6px;
-  bottom: 6px;
-  left: 6px;
-  right: 6px;
-  z-index: -1;
-  
-  background: rgba(11,11,11,0.80);
-  
-  opacity: 0.0;
-  margin: 30px;
-  
-  -webkit-transition: 
-    all 0.25s ease-out 0.05s;
-  transition: 
-    all 0.25s ease-out 0.05s;
-}
-
-/* hover state */
-.bttn.order:hover {
-  color: #fff;
-}
-.bttn.order:hover:after {
-  opacity: 1.0;
-  margin: 0px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Stage
------------------------------*/
-section.stage {
-	padding-top: 50px;
-	left: 0;
-	bottom: 0;
-	text-align: center;
-}
-
-.config-render-stage,
-.watch-comp {
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	height: 100vh;
-}
-
-
-
-
-/* Composite Options
---------------------------------------*/
-.watch-comp {
-    /*min-width: 100vw;
-    max-width: 100vw;
-    min-height: 100vh;
-    max-height: 100vh;*/
-    /*border: 2px solid salmon;*/
-}
-.composite-option {
-    opacity: 0.0;
-
-    -webkit-transition: 
-        opacity 0.32s ease-out 0.0s;
-    transition: 
-        opacity 0.32s ease-out 0.0s;
-}
-
-/* Band Opt Layer */
-.watch-comp[data-band-opt="band-opt-black"] #band-opt-black, 
-.watch-comp[data-band-opt="band-opt-brown"] #band-opt-brown,
-.watch-comp[data-band-opt="band-opt-blue"] #band-opt-blue,
-.watch-comp[data-band-opt="band-opt-crimson"] #band-opt-crimson,
-.watch-comp[data-band-opt="band-opt-rust"] #band-opt-rust {
-    opacity: 1.0;
-}
-
-/* Case Opt Layer */
-.watch-comp[data-case-opt="case-opt-gold"] #case-opt-gold,
-.watch-comp[data-case-opt="case-opt-silver"] #case-opt-silver,
-.watch-comp[data-case-opt="case-opt-graphite"] #case-opt-graphite,
-.watch-comp[data-case-opt="case-opt-blue-steel"] #case-opt-blue-steel,
-.watch-comp[data-case-opt="case-opt-rose-gold"] #case-opt-rose-gold {
-    opacity: 1.0;
-}
-
-/* Crown Opt Layer */
-.watch-comp[data-crown-opt="crown-opt-gold"] #crown-opt-gold,
-.watch-comp[data-crown-opt="crown-opt-silver"] #crown-opt-silver,
-.watch-comp[data-crown-opt="crown-opt-graphite"] #crown-opt-graphite,
-.watch-comp[data-crown-opt="crown-opt-blue-steel"] #crown-opt-blue-steel,
-.watch-comp[data-crown-opt="crown-opt-rose-gold"] #crown-opt-rose-gold,
-.watch-comp[data-crown-opt="crown-opt-crimson"] #crown-opt-crimson,
-.watch-comp[data-crown-opt="crown-opt-electric-blue"] #crown-opt-electric-blue,
-.watch-comp[data-crown-opt="crown-opt-mint-green"] #crown-opt-mint-green,
-.watch-comp[data-crown-opt="crown-opt-black"] #crown-opt-black,
-.watch-comp[data-crown-opt="crown-opt-rust"] #crown-opt-rust {
-    opacity: 1.0;
-}
-
-
-/* Dial Opt Layer */
-.watch-comp[data-dial-opt="dial-opt-white"] #dial-opt-white,
-.watch-comp[data-dial-opt="dial-opt-gray"] #dial-opt-gray,
-.watch-comp[data-dial-opt="dial-opt-graphite"] #dial-opt-graphite,
-.watch-comp[data-dial-opt="dial-opt-midnight-blue"] #dial-opt-midnight-blue,
-.watch-comp[data-dial-opt="dial-opt-violet"] #dial-opt-violet {
-    opacity: 1.0;
-}
-
-
-/* Hands Opt Layer */
-.watch-comp[data-hands-opt="hands-opt-gold"] #hands-opt-gold,
-.watch-comp[data-hands-opt="hands-opt-silver"] #hands-opt-silver,
-.watch-comp[data-hands-opt="hands-opt-graphite"] #hands-opt-graphite,
-.watch-comp[data-hands-opt="hands-opt-blue-steel"] #hands-opt-blue-steel,
-.watch-comp[data-hands-opt="hands-opt-rose-gold"] #hands-opt-rose-gold {
-    opacity: 1.0;
-}
-
-
-
-
-
-
-
-
-
-
-/* Vertically Centered Layout
---------------------------------------*/
-
-.faux-table,
-.faux-table .row,
-.faux-table .cell {
-    background: none;
-    border: none;
-    line-height: inherit !important;
-    color: inherit !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    border-spacing: 0px !important;
-    border-collapse: separate;
-}
-.faux-table .row:before,
-.faux-table .row:after {
-    /* Foundations Overrides */
-    content: "";
-    display: none;
-}
-.faux-table {
-    display: table !important;
-
-    /* needs width set to full width, incase 
-    inner-content doesn't stretch to 100% */
-    width: 100%;
-    max-width: 100%;
-    table-layout: fixed;
-    
-    min-height: calc(100vh);
-
-    /* transitions for demo frame resizing */
-    -webkit-transition: all 0.3s ease-out 0s;
-    transition: all 0.3s ease-out 0s;
-}
-.faux-table .row {
-    display: table-row;
-}
-.faux-table .row.top,
-.faux-table .row.bottom {
-	/* any increment smaller than button or 
-	input height - row height will grow if content 
-	is taller than the height set with using table elements */
-    height: 1px; 
-}
-.faux-table .cell {
-    display: table-cell;
-    position: relative;
-    vertical-align: middle; /* default */
-}
-.faux-table .cell.vertical-align-top {
-    vertical-align: top;
-}
-.faux-table .cell.vertical-align-middle {
-    vertical-align: middle;
-}
-.faux-table .cell.vertical-align-bottom {
-    vertical-align: bottom;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-

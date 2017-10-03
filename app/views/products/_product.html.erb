@@ -7,7 +7,15 @@
             <p class="card-text"><%= product.description %></p>
         </div>
         <div class="card-footer">
-              <%= link_to product_path(id:product.id), class: "btn btn-primary" do %>Find out More!<% end %>
+              <%= link_to product_path(id:product.id), class: "btn btn-primary" do %>
+              More Details
+              <% end %>
+        </div>
+        <div>
+            <% if admin_signed_in? %>
+                <%= link_to "Edit", edit_product_path(product.id) %>
+                <%= link_to "Delete", product_path(product.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
         </div>
    </div>
 </div>
