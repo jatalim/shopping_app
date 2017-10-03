@@ -5,6 +5,35 @@
   margin-right:0px;
 }
 
+hr{
+  border: 0;
+    border-bottom: 1px dashed #ccc;
+    background: #999;
+    width:80%;
+}
+
+.glyphicon-shopping-cart{
+  font-size:24px;
+}
+
+
+/*cart count badge*/
+.cartBadge{
+  position:relative;
+  top:-10px;
+  background:red;
+  border-radius: 15px;
+  color:white;
+  font-size:14px;
+
+}
+
+/*.cartBadge:hover{
+  background:#FF817F;
+}*/
+
+
+
 /*nav bar*/
 
 .navbar-right {
@@ -27,7 +56,6 @@
 }
 
 
-
 .jumbotron {
   background-image: asset-url("jumboshirt.jpg");
   background-size: cover;
@@ -44,8 +72,7 @@
   padding: 20px 40px 20px 40px;
 }
 
-
-
+/*black shadow on jumbotron image*/
 .overlayBg{
   padding-top: 20px;
   padding-bottom:20px;
@@ -54,10 +81,44 @@
 
 }
 
+/*number input field*/
+.numberBox{
+  width:50px;
+}
+
 /*End of Products Index*/
+
+
+/*CartedProducts Index*/
+
+#shopping-cart{
+  h2{
+    text-align: left;
+  }
+  p{
+    font-size: 18px;
+  }
+
+  tr td{
+    vertical-align: middle;
+  }
+
+  .itemImage{
+    width:5%;
+  }
+
+}
+
+.glyphicon-remove{
+  color:red;
+}
+
+
+/*end of Carted Products*/
 
 /* user edit profile */
 
 .panel-title1, .deactivate {
   text-align: center
 }
+
