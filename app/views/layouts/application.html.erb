@@ -20,7 +20,11 @@
                 <i class = "glyphicon glyphicon-shopping-cart"></i>
                 <%end%></li>
 
-            <% if public_user_signed_in? %>
+            <% if admin_signed_in? %>
+            <li><%= link_to "Admin Dashboard", admins_dashboard_path %></li>
+              <li><%= link_to "Sign Out", destroy_admin_session_path, method: :delete %></li>  
+
+            <% elsif public_user_signed_in? %>
               <li><%= link_to "Your Account", edit_public_user_registration_path %></li>
               <li><%= link_to "Sign Out", destroy_public_user_session_path, method: :delete %></li>  
         
