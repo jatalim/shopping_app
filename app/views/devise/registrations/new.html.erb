@@ -44,7 +44,7 @@
                     	<div style="margin-top:10px" class="form-group">
                          	<div class="col-sm-12 controls">
                               	<%= f.button :submit, "Sign up" %>
-                              	<a id="btn-fblogin" href="#" class="btn btn-primary">Sign up with Facebook</a>                                    
+                              	<%= link_to "Sign up with Facebook", public_user_facebook_omniauth_authorize_path, class: "btn btn-primary" %>                                       
                          	</div>
                     	</div>
 
