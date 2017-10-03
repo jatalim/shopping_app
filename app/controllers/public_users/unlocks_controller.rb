@@ -1,5 +1,4 @@
 class PublicUsers::UnlocksController < Devise::UnlocksController
-  include Accessible
   # GET /resource/unlock/new
   # def new
   #   super

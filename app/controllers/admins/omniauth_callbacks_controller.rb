@@ -1,5 +1,4 @@
 class Admins::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-  include Accessible
   # You should configure your model like this:
   # devise :omniauthable, omniauth_providers: [:twitter]
 

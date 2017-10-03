@@ -9,7 +9,7 @@ module Accessible
     flash.clear
     if current_admin
       # if you have rails_admin. You can redirect anywhere really
-      redirect_to(new_admin_session_path) && return
+      redirect_to(admins_dashboard_path) && return
     elsif current_public_user
       # The authenticated root path can be defined in your routes.rb in: devise_scope :user do...
       redirect_to(root_path) && return
