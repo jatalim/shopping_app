@@ -61,12 +61,17 @@ class CartedProductsController < ApplicationController
   end
 
   def destroy
+
+      @updateProducts = CartedProduct.new
       @cartedproduct = CartedProduct.find(params[:id])
       @cartedproduct.destroy
+      @cartedproducts = CartedProduct.where(public_user_id: current_public_user.id).order("created_at DESC")
 
       flash[:info] = "Product removed from cart"
 
-      redirect_to carted_products_path
+      respond_to do |format|
+        format.js
+      end
 
   end
 
