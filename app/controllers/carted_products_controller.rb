@@ -1,7 +1,11 @@
 class CartedProductsController < ApplicationController
 
   def index
-    @cartedproducts = CartedProduct.where(public_user_id: current_public_user.id).order("created_at DESC")
+    if !current_public_user.blank? #user logged in
+       @cartedproducts = CartedProduct.where(public_user_id: current_public_user.id).order("created_at DESC")
+    else
+       redirect_to root_path #temporary redirect
+    end
   end
 
   def create
