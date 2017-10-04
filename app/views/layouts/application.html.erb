@@ -19,16 +19,15 @@
       
 			<ul class="nav navbar-nav navbar-right">
              <li>
-                <%= link_to carted_products_path do%>
-                  <i class = "glyphicon glyphicon-shopping-cart"></i>
+          <%= link_to carted_products_path do%>
+              <i class = "glyphicon glyphicon-shopping-cart"></i> -->
 
-                  <!-- Displaying of cart badge -->
-                  <% cartCount = CartedProduct.where(public_user_id: current_public_user.id).count %>
+                Displaying of cart badge
+              <% cartCount = CartedProduct.where(public_user_id: current_public_user.id).count %>
                   <% if cartCount > 0 %>
                     <span class="badge cartBadge"><%= cartCount %></span>
-                  <% end %>
-
-                <%end%>
+                  <% end %> 
+                <%end%> 
               </li>
 
             <% if admin_signed_in? %>
