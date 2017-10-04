@@ -10,6 +10,7 @@ root to: "products#index"
 
 get 'admins/dashboard' => 'admins#dashboard'
 get 'public_users/show' => 'public_users#show'
+post 'carted_products/qty' => 'carted_products#updateQuantity'
 
   resources :products
   resources :carted_products

@@ -17,7 +17,7 @@
 
     <td class="itemQuantity ">
       <!-- Change this to form - quantity able to be edited -->
-      <p><%= cartprod.product_quantity %></p>
+      <p><%= number_field_tag "carted_product[#{cartprod.id}]", cartprod.product_quantity, :id => "carted_product_#{cartprod.id}" %></p>
     </td>
 
     <td class="itemTotal ">
@@ -26,7 +26,7 @@
 
     <td class="itemDelete ">
       <!-- destroy function -->
-      <p><i class="glyphicon glyphicon-remove"></i></p>
+      <p><%= link_to carted_product_path(id: cartprod.id), method: :delete do %><i class="glyphicon glyphicon-remove"></i><% end %></p>
     </td>
 
 
