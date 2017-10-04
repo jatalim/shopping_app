@@ -1,58 +1,8 @@
 <h1> Your Shopping Cart </h1>
 
 <div class="container">
+  <div id="shopee"><%= render 'carted_products/partial_in_a_partial' %></div>
 
 
 
-<table id="shopping-cart" class="table table-hover table-condensed">
-    <thead id="shopping-cart-title">
 
-      <tr class="row">
-        <th class="col-md-2">
-          <h2>Item</h2>
-        </th>
-
-        <th class="col-md-4">
-          <h2>Description</h2>
-        </th>
-
-        <th class="col-md-2 ">
-          <h2>Price</h2>
-        </th>
-
-        <th class="col-md-2">
-          <h2>Qty</h2>
-        </th>
-
-        <th class="col-md-2">
-          <h2>Total</h2>
-        </th>
-        <th class="col-md-1">
-          <h2></h2>
-        </th>
-    </tr>
-    </thead>
-
-
-
-    <tbody id="shopping-cart-items">
-
-      <%= form_for @updateProducts, url: carted_products_qty_path, method: :post do |f| %>
-        <% @cartedproducts.each do |cartprod| %>
-
-          <%= render 'carted_products/cartprod', :cartprod => cartprod %>
-
-        <% end %>
-
-
-    </tbody>
-
-
-    <tfoot>
-      <tr>
-        <%= f.submit "Update form", class: "btn btn-primary" %>
-      <% end %>
-      </tr>
-    </tfoot>
-
-</table>
