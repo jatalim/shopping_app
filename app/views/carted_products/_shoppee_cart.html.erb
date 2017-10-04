@@ -1,8 +1,4 @@
-
-<% product = Product.find(cartprod.product_id) %>
-<tr id="productItem" class="row">
-
-    <td class="itemImage ">
+<td class="itemImage ">
       <%= image_tag product.image.thumb %>
     </td>
 
@@ -23,11 +19,3 @@
     <td class="itemTotal ">
       <p>$<%= product.price*cartprod.product_quantity %></p>
     </td>
-
-    <td class="itemDelete ">
-      <!-- destroy function -->
-      <p><%= link_to carted_product_path(id: cartprod.id), method: :delete, remote: true do %><i class="glyphicon glyphicon-remove"></i><% end %></p>
-    </td>
-
-
-</tr>
