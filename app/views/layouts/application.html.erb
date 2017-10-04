@@ -18,20 +18,7 @@
          </div>
       
 			<ul class="nav navbar-nav navbar-right">
-             <li>
-          <%= link_to carted_products_path do%>
-              <i class = "glyphicon glyphicon-shopping-cart"></i> 
-                  <% if !current_public_user.blank? %>
-                  <% cartCount = CartedProduct.where(public_user_id: current_public_user.id).count %>
-
-                    <% if cartCount > 0 %>
-                      <span class="badge cartBadge"><%= cartCount %></span>
-                    <% end %>
-
-                  <% end %>
-                <% end %>
-
-              </li>
+             <li id="shopify"><%= render 'carted_products/shopify' %></li>
 
             <% if admin_signed_in? %>
             <li><%= link_to "Admin Dashboard", admins_dashboard_path %></li>
@@ -50,9 +37,8 @@
     </div>
 
       <!-- flash start --> 
-    <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, class: "alert alert-info"%>
-     <% end %>
+    <span id="flashes"><%= render 'layouts/flashes' %></span>
+     
 <!-- flash end --> 
 
 <!-- yield start --> 

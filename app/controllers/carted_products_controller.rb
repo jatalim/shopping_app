@@ -20,12 +20,16 @@ class CartedProductsController < ApplicationController
     @cartProd = CartedProduct.new(cartedproduct_params)
 
     if @cartProd.save
-      flash["info"] = "Product added to cart"
+      flash.now["info"] = "Product added to cart"
+      respond_to do |format|
+        format.js {}
+        
+      end
     else
       flash["info"] = "There was an error adding product to cart"
     end
 
-    redirect_to root_path
+    
 
   end
 
