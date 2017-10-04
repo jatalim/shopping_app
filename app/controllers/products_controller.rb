@@ -29,6 +29,7 @@ before_action :authenticate_admin!,  only: [:new, :edit, :create, :update]
 
     def show 
       @product = Product.find(params[:id])
+      @cartedproduct = CartedProduct.new 
     end 
 
     def create
