@@ -37,11 +37,12 @@
 
     <tbody id="shopping-cart-items">
 
-    <% @cartedproducts.each do |cartprod| %>
+      <%= form_for @updateProducts, url: carted_products_qty_path, method: :post do |f| %>
+        <% @cartedproducts.each do |cartprod| %>
 
-      <%= render 'carted_products/cartprod', :cartprod => cartprod %>
+          <%= render 'carted_products/cartprod', :cartprod => cartprod %>
 
-    <% end %>
+        <% end %>
 
 
     </tbody>
@@ -49,6 +50,8 @@
 
     <tfoot>
       <tr>
+        <%= f.submit "Update form", class: "btn btn-primary" %>
+      <% end %>
       </tr>
     </tfoot>
 
