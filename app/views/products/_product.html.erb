@@ -7,7 +7,7 @@
             <p class="card-text"><%= product.price %></p>
             <p class="card-text"><%= product.description %></p>
 
-            <%= form_for @cartedproduct, url:carted_products_path, method: :post do |f| %>
+            <%= form_for @cartedproduct, url:carted_products_path, method: :post, remote: true do |f| %>
               <%= f.label :quantity %>
               <%= f.number_field :product_quantity, :value => 1, class: "numberBox" %>
               <%= f.hidden_field :product_id, :value => product.id %>
