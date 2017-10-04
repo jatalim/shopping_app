@@ -2,11 +2,17 @@ class ProductsController < ApplicationController
 
     def index
       @products = Product.all
+      @cartedproduct = CartedProduct.new
     end 
 
     def new
       @product = Product.new
     end
+
+
+    def show 
+      @product = Product.find(params[:id])
+    end 
 
     def create
       product_params = params[:product].permit(:name,:description,:price,:quantity,:image)

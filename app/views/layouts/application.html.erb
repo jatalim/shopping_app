@@ -16,10 +16,23 @@
         <div class="navbar-brand"> 
           <%= link_to "Home", root_path %> 
          </div>
+      
 			<ul class="nav navbar-nav navbar-right">
-                <li><%= link_to carted_products_path, class: 'btn btn-lg' do%>
-                <i class = "glyphicon glyphicon-shopping-cart"></i>
-                <%end%></li>
+             <li>
+                <%= link_to carted_products_path do%>
+                  <i class = "glyphicon glyphicon-shopping-cart"></i>
+
+                  <!-- Displaying of cart badge -->
+                  <% if !current_public_user.blank? %>
+                  <% cartCount = CartedProduct.where(public_user_id: current_public_user.id).count %>
+
+                    <% if cartCount > 0 %>
+                      <span class="badge cartBadge"><%= cartCount %></span>
+                    <% end %>
+
+                  <% end %>
+                <% end %>
+              </li>
 
             <% if admin_signed_in? %>
             <li><%= link_to "Admin Dashboard", admins_dashboard_path %></li>
@@ -34,6 +47,7 @@
             <li><%= link_to "Login", new_public_user_session_path %></li>
             </ul>
             <% end %>     
+
     </div>
 
       <!-- flash start --> 
@@ -44,7 +58,7 @@
 
 <!-- yield start --> 
     	<%= yield %>
-<!-- yield start --> 
+<!-- yield end --> 
 
   </body>
 </html>

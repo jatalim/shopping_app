@@ -1,1 +1,55 @@
-<h1> Shopping Cart Page </h1>
+<h1> Your Shopping Cart </h1>
+
+<div class="container">
+
+
+
+<table id="shopping-cart" class="table table-hover table-condensed">
+    <thead id="shopping-cart-title">
+
+      <tr class="row">
+        <th class="col-md-2">
+          <h2>Item</h2>
+        </th>
+
+        <th class="col-md-4">
+          <h2>Description</h2>
+        </th>
+
+        <th class="col-md-2 ">
+          <h2>Price</h2>
+        </th>
+
+        <th class="col-md-2">
+          <h2>Qty</h2>
+        </th>
+
+        <th class="col-md-2">
+          <h2>Total</h2>
+        </th>
+        <th class="col-md-1">
+          <h2></h2>
+        </th>
+    </tr>
+    </thead>
+
+
+
+    <tbody id="shopping-cart-items">
+
+    <% @cartedproducts.each do |cartprod| %>
+
+      <%= render 'carted_products/cartprod', :cartprod => cartprod %>
+
+    <% end %>
+
+
+    </tbody>
+
+
+    <tfoot>
+      <tr>
+      </tr>
+    </tfoot>
+
+</table>
