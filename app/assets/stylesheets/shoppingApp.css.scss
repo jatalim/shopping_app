@@ -56,8 +56,29 @@
 
 /*End of Products Index*/
 
-/* user edit profile */
+/* -------- user edit profile ----------- */
 
 .panel-title1, .deactivate {
   text-align: center
 }
+
+/* -------- end of edit profile ----------- */
+
+
+
+/* --------- user profile show ----------------- */
+
+.username {
+  font-size: 20px;
+  font-weight: bold
+}
+
+.userlabel {
+  margin-left: 20px
+}
+
+.hrshow {
+  border-top: 3px double #8c8b8b;
+}
+
+/* --------- end of user profile ----------------- */

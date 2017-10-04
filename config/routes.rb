@@ -9,6 +9,7 @@ root to: "products#index"
 
 
 get 'admins/dashboard' => 'admins#dashboard'
+get 'public_users/show' => 'public_users#show'
 
   resources :products
   resources :carted_products
