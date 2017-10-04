@@ -16,5 +16,6 @@ post 'carted_products/qty' => 'carted_products#updateQuantity'
   resources :carted_products
   resources :product_taggings
 
+post '/checkout' => 'carted_products#checkout'
 
 end

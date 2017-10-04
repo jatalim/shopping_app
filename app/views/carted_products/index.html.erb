@@ -2,8 +2,6 @@
 
 <div class="container">
 
-
-
 <table id="shopping-cart" class="table table-hover table-condensed">
     <thead id="shopping-cart-title">
 
@@ -56,3 +54,25 @@
     </tfoot>
 
 </table>
+
+<script src="https://js.braintreegateway.com/v2/braintree.js"></script>  
+
+<%= form_tag("/checkout", id: "authorize") do %>  
+  <div id="authorize-form"></div>
+  <input type="submit" class="btn btn-primary" value="Authorize charge of $0.01 per second">
+<% end %>  
+
+<script>
+var clientToken = "<%= @client_token %>";
+
+braintree.setup(clientToken, "dropin", {  
+  container: "authorize-form"
+});
+</script>
+
+
+
+
+
+
+

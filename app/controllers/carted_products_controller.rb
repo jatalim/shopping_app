@@ -1,10 +1,9 @@
 class CartedProductsController < ApplicationController
 
-
   def index
-
+    
     @updateProducts = CartedProduct.new
-
+    @client_token = Braintree::ClientToken.generate
     if !current_public_user.blank? #user logged in
        @cartedproducts = CartedProduct.where(public_user_id: current_public_user.id).order("created_at DESC")
     else
@@ -28,14 +27,21 @@ class CartedProductsController < ApplicationController
     else
       flash["info"] = "There was an error adding product to cart"
     end
-
-    
-
   end
 
   def update
-
   end
+
+  def checkout
+    nounce = params[:payment_menthod_nonce]
+    result = Braintree::Transaction.sale(
+    :amount => "10",
+    :payment_method_nonce => nounce, 
+    :options => {
+    :submit_for_settlement => true
+    }
+  )
+  end 
 
   def updateQuantity
 
