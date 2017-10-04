@@ -22,12 +22,15 @@
                   <i class = "glyphicon glyphicon-shopping-cart"></i>
 
                   <!-- Displaying of cart badge -->
+                  <% if !current_public_user.blank? %>
                   <% cartCount = CartedProduct.where(public_user_id: current_public_user.id).count %>
-                  <% if cartCount > 0 %>
-                    <span class="badge cartBadge"><%= cartCount %></span>
-                  <% end %>
 
-                <%end%>
+                    <% if cartCount > 0 %>
+                      <span class="badge cartBadge"><%= cartCount %></span>
+                    <% end %>
+
+                  <% end %>
+                <% end %>
               </li>
 
               <% if public_user_signed_in? %>
