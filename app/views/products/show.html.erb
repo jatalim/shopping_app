@@ -79,7 +79,7 @@
 
       </div>
 
-            <%= form_for @cartedproduct, url:carted_products_path, method: :post do |f| %>
+            <span id="showcart"><%= form_for @cartedproduct, url:carted_products_path, method: :post, remote: true do |f| %>
                 <%= f.label :quantity %>
                 <%= f.number_field :product_quantity, :value => 1, class: "numberBox" %>
                 <%= f.hidden_field :product_id, :value => @product.id %>
@@ -87,7 +87,7 @@
                       <%= f.hidden_field :public_user_id, :value => current_public_user.id %>
                   <% end %>
                 <%= f.submit 'Add to Cart', class: "btn btn-success btn-xs" %>
-            <% end %>
+            <% end %></span>
 
   </main>
 
