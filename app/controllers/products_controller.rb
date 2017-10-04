@@ -3,6 +3,7 @@ before_action :authenticate_admin!,  only: [:new, :edit, :create, :update]
 
     def index
       @products = Product.all
+      @cartedproduct = CartedProduct.new 
     end 
 
     def destroy

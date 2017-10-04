@@ -20,9 +20,7 @@
 			<ul class="nav navbar-nav navbar-right">
              <li>
           <%= link_to carted_products_path do%>
-              <i class = "glyphicon glyphicon-shopping-cart"></i> -->
-
-
+              <i class = "glyphicon glyphicon-shopping-cart"></i> 
                   <% if !current_public_user.blank? %>
                   <% cartCount = CartedProduct.where(public_user_id: current_public_user.id).count %>
 
