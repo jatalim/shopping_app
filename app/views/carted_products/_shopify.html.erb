@@ -1,7 +1,9 @@
 <%= link_to carted_products_path do%>
               <i class = "glyphicon glyphicon-shopping-cart"></i> 
                   <% if !current_public_user.blank? %>
-                  <% cartCount = CartedProduct.where(public_user_id: current_public_user.id).count %>
+                  <% cartproducts = CartedProduct.where(public_user_id: current_public_user.id) %>
+                  <% cartCount = 0 %>
+                  <% cartproducts.each {|cartItem| cartCount += cartItem.product_quantity} %>
 
                     <% if cartCount > 0 %>
                       <span class="badge cartBadge"><%= cartCount %></span>
