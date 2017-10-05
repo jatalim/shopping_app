@@ -5,7 +5,7 @@ class CartedProductsController < ApplicationController
     @updateProducts = CartedProduct.new
     @client_token = Braintree::ClientToken.generate
     if !current_public_user.blank? #user logged in
-       @cartedproducts = CartedProduct.where(public_user_id: current_public_user.id).order("created_at DESC")
+       @cartedproducts = CartedProduct.where(public_user_id: current_public_user.id)
     else
        redirect_to root_path #temporary redirect
     end
@@ -70,8 +70,9 @@ class CartedProductsController < ApplicationController
 
       @updateProducts = CartedProduct.new
       @cartedproduct = CartedProduct.find(params[:id])
+      @cartprod = @cartedproduct
       @cartedproduct.destroy
-      @cartedproducts = CartedProduct.where(public_user_id: current_public_user.id).order("created_at DESC")
+      @cartedproducts = CartedProduct.where(public_user_id: current_public_user.id)
 
       flash[:info] = "Product removed from cart"
 
