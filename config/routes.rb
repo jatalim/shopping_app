@@ -18,4 +18,8 @@ post 'carted_products/qty' => 'carted_products#updateQuantity'
 
 post '/checkout' => 'carted_products#checkout'
 
+if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
+
 end
