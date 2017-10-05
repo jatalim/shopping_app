@@ -1,7 +1,6 @@
 class CartedProductsController < ApplicationController
 
   def index
-    
     @updateProducts = CartedProduct.new
     @client_token = Braintree::ClientToken.generate
     if !current_public_user.blank? #user logged in
@@ -13,16 +12,12 @@ class CartedProductsController < ApplicationController
 
 
   def create
-    
     cartedproduct_params = params[:carted_product].permit(:product_quantity,:product_id,:public_user_id)
-
     @cartProd = CartedProduct.new(cartedproduct_params)
-
     if @cartProd.save
       flash.now["info"] = "Product added to cart"
       respond_to do |format|
         format.js {}
-        
       end
     else
       flash["info"] = "There was an error adding product to cart"
@@ -44,7 +39,6 @@ class CartedProductsController < ApplicationController
   end 
 
   def updateQuantity
-
     # for each cartedproduct, call update with the new product_quantity.
     messageStr = ""
     params[:carted_product].each do |id, qty|
@@ -67,7 +61,6 @@ class CartedProductsController < ApplicationController
   end
 
   def destroy
-
       @updateProducts = CartedProduct.new
       @cartedproduct = CartedProduct.find(params[:id])
       @cartedproduct.destroy
