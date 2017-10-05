@@ -1,4 +1,6 @@
 <h3> Hello <%= @publicuser.name %></h3>
 Thank you for registering to our T-Shirt Site! 
 <%= link_to "Feel free to browse around or check out our latest in store!", root_url %><br>
-<%= image_tag "banner.png" %>
+<%= image_tag "banner.png" %><br>
+<small>You recieved this email because you registered it with <%= @publicuser.email %>.
+If you did not do this. Please ignore this newsletter.</small>
