@@ -25,8 +25,12 @@
               </div>
 
               <div class="col-md-9 col-xs-9 userlabel">
+              <% if current_public_user.name %>
                 Name: <span class= "username"><%= current_public_user.name %></span><br>
                 Email: <span class= "username"><%= current_public_user.email %></span>
+                <% else %>
+                Email: <span class= "username"><%= current_public_user.email %></span>
+                <% end %>
               </div>
               
             </div>
