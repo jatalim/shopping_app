@@ -5,7 +5,7 @@ class PublicUser < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]
 
-   mount_uploader :avatar, AvatarUploader
+   mount_uploader :image, AvatarUploader
    
   def self.new_with_session(params, session)
     super.tap do |user|

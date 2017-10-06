@@ -10,12 +10,18 @@
                 
         </div>
 
+        
+
         <div style="padding-top:30px" class="panel-body" >
           
             <div class="row">
               
               <div class="col-md-1 col-xs-1">
+              <% if current_public_user.image %>
                 <%= image_tag current_public_user.image %>  
+              <% else %>
+                no image
+              <% end %>
               </div>
 
               <div class="col-md-9 col-xs-9 userlabel">
