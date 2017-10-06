@@ -14,7 +14,6 @@ class CartedProductsController < ApplicationController
   def create
     cartedproduct_params = params[:carted_product].permit(:product_quantity,:product_id,:public_user_id)
     @cartProd = CartedProduct.new(cartedproduct_params)
-    if @cartProd.save
     # check if product already exists in shopping cart
     @cartedproducts = CartedProduct.where(public_user_id: current_public_user.id)
     

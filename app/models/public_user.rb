@@ -23,4 +23,9 @@ class PublicUser < ApplicationRecord
       user.image = auth.info.image # assuming the user model has an image
     end
   end
+
+  after_create :welcome_send
+  def welcome_send
+    RegistrationMailer.registration_mailer(self).deliver_now
+  end
 end
