@@ -7,7 +7,6 @@ devise_for :admins, path: 'admins', controllers: { sessions: "admins/sessions", 
 
 root to: "products#index"
 
-
 get 'admins/dashboard' => 'admins#dashboard'
 get 'public_users/show' => 'public_users#show'
 post 'carted_products/qty' => 'carted_products#updateQuantity'
@@ -15,7 +14,8 @@ post 'carted_products/qty' => 'carted_products#updateQuantity'
   resources :products
   resources :carted_products
   resources :product_taggings
+  resources :ordered_products
 
-post '/checkout' => 'carted_products#checkout'
+post '/checkout' => 'ordered_products#create'
 
 end

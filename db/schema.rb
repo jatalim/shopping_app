@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171003072006) do
+ActiveRecord::Schema.define(version: 20171005142002) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,15 @@ ActiveRecord::Schema.define(version: 20171003072006) do
     t.bigint "public_user_id"
     t.index ["product_id"], name: "index_carted_products_on_product_id"
     t.index ["public_user_id"], name: "index_carted_products_on_public_user_id"
+  end
+
+  create_table "ordered_products", force: :cascade do |t|
+    t.integer "product_quantity"
+    t.decimal "product_price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "product_id"
+    t.index ["product_id"], name: "index_ordered_products_on_product_id"
   end
 
   create_table "product_taggings", force: :cascade do |t|
@@ -79,7 +88,6 @@ ActiveRecord::Schema.define(version: 20171003072006) do
     t.string "uid"
     t.string "name"
     t.text "image"
-    t.boolean "admin", default: false
     t.index ["email"], name: "index_public_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_public_users_on_reset_password_token", unique: true
   end
@@ -92,6 +100,7 @@ ActiveRecord::Schema.define(version: 20171003072006) do
 
   add_foreign_key "carted_products", "products"
   add_foreign_key "carted_products", "public_users"
+  add_foreign_key "ordered_products", "products"
   add_foreign_key "product_taggings", "products"
   add_foreign_key "product_taggings", "tags"
 end
