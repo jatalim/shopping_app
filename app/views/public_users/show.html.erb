@@ -10,17 +10,27 @@
                 
         </div>
 
+        
+
         <div style="padding-top:30px" class="panel-body" >
           
             <div class="row">
               
               <div class="col-md-1 col-xs-1">
+              <% if current_public_user.image %>
                 <%= image_tag current_public_user.image %>  
+              <% else %>
+                no image
+              <% end %>
               </div>
 
               <div class="col-md-9 col-xs-9 userlabel">
+              <% if current_public_user.name %>
                 Name: <span class= "username"><%= current_public_user.name %></span><br>
                 Email: <span class= "username"><%= current_public_user.email %></span>
+                <% else %>
+                Email: <span class= "username"><%= current_public_user.email %></span>
+                <% end %>
               </div>
               
             </div>
