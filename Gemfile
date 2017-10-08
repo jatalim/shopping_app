@@ -40,8 +40,11 @@ gem 'carrierwave', '~> 1.1'
 gem "mini_magick"
 gem 'omniauth-facebook'
 gem "braintree", "~> 2.78.0"
+gem 'sendgrid-ruby'
 
 group :development, :test do
+  gem 'rspec-rails', '~> 3.6'
+  gem 'factory_girl_rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
@@ -49,6 +52,11 @@ group :development, :test do
   gem 'selenium-webdriver'
   # Use sqlite3 as the database for Active Record
   gem 'pg', '~> 0.18.2'
+end
+
+group :test do
+   gem 'shoulda-matchers', '~> 3.1'
+   gem 'rails-controller-testing'
 end
 
 group :development do
