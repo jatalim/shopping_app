@@ -36,10 +36,21 @@
 
     </div>
 
-      <!-- flash start --> 
+    <!-- flash start --> 
     <span id="flashes"><%= render 'layouts/flashes' %></span>
-     
-<!-- flash end --> 
+
+    <script type="text/javascript">
+
+      $("#flashes").click(function(){
+        hideAlert();
+      });
+
+      function hideAlert() {
+         $(".show").addClass("fade");
+      } 
+      
+    </script> 
+    <!-- flash end --> 
 
 <!-- yield start --> 
     	<%= yield %>

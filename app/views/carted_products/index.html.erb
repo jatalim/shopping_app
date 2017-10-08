@@ -1,33 +1,12 @@
-  <script src="https://js.braintreegateway.com/v2/braintree.js"></script>  
-
-
-  <script>
-      var clientToken = "<%= @client_token %>";
-
-        braintree.setup(clientToken, "dropin", {  
-          container: "authorize-form"
-            }
-          );
-  </script>
-
-
 <h2> Your Shopping Cart </h2>
 
 <div class="container">
-  <div id="shopee"><%= render 'carted_products/partial_in_a_partial' %></div>
 
-       <% @cartedproducts.each do |cartprod| %>
+  <div id="shopee">
+    <%= render 'carted_products/partial_in_a_partial' %>
+  </div>
 
-        <% @product = Product.find(cartprod.product_id) %>
-        <p><% number_field_tag "carted_product[#{cartprod.id}]", cartprod.product_quantity, :id => "carted_product_#{cartprod.id}" %></p>
-        <% @total_amount = @product.price*cartprod.product_quantity %>
-        <% end %>  
-        
-        <%= form_tag("/checkout", id: "authorize") do %>  
-            <div id="authorize-form"></div>
-             <input type="submit" class="btn btn-primary" value="Click to submit payment of $<%= @total_amount %>">
-             
-        <%end%> 
+<%= button_to "Order Now", new_ordered_product_path, method: :get %>
 
 </div>
 

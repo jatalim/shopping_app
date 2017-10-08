@@ -89,6 +89,13 @@
                 <%= f.submit 'Add to Cart', class: "btn btn-success btn-xs" %>
             <% end %></span>
 
+            <% if admin_signed_in? %>
+            <span id="productTags">
+              <p>Product Tags</p>
+                <!-- list all product tags, link to add/remove -->
+            </span>
+            <% end %>
+
   </main>
 
 </div>

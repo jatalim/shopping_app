@@ -3,6 +3,7 @@ class Product < ApplicationRecord
   mount_uploader :image, AvatarUploader
 
   has_many :carted_products
+  has_many :ordered_products
   has_many :product_taggings
   has_many :tags, :through => :product_taggings
 

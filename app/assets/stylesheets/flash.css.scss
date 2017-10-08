@@ -1,7 +1,16 @@
 /*flash*/
 
-.alert{
-    margin-bottom:0px;
-    z-index:10;
-    text-align: left;
+#flashes{
+    
+    position: fixed;
+    top: 70px;
+    right:0px;
+    max-width: 300px;
+    width:100%;
+
+    // must be more than navbar z-index
+    z-index:1040; 
+    
+
 }
+

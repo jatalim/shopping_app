@@ -1,5 +1,5 @@
 <% product = Product.find(cartprod.product_id) %>
-<tr id="productItem" class="row">
+<tr id="productItem-<%= cartprod.id %>" class="row">
 
     <td class="itemImage ">
       <%= image_tag product.image.thumb %>
