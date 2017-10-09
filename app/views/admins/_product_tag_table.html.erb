@@ -1,0 +1,25 @@
+
+<!-- get tag for each product -->
+<% tags = prod.tags %>
+
+  <tr class="product-tags">
+   
+      <td>
+         <%= link_to product_path(id:prod.id) do %>
+           <%= prod.name %>  
+         <% end %>
+      </td>
+   
+
+      <% if !tags.blank? %>
+
+        <% tags.each do |tag| %>
+          <td><%= tag.name %></td>
+          <!-- insert button to delete -->
+        <% end %>
+  
+      <% else %>
+          <td> <i>No Tags</i> </td>
+      <% end %>
+
+  </tr>

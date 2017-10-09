@@ -92,17 +92,15 @@
             <% if admin_signed_in? %>
 
               <% if !@tags.blank? %>
-                <span id="productTags">
-                  <p>Product Tags</p>
+                <div id="productTags">
+                  <h3>Product Tags</h3>
                     <% @tags.each do |tag| %>
                       <span class="tagItem"> <%= tag.name %> </span>
                     <% end %>
-                </span>
+                </div>
+              <% else %>
+                <span>No Tags for this Product.</span>
               <% end %>
-
-              <span id="tagForm">
-                <%= render "tags/new" %>
-              </span>
               
             <% end %>
 
