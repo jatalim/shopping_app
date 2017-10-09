@@ -1,0 +1,13 @@
+<h3> Hello <%= @publicuser.name %></h3>
+Thank you for ordering from our T-Shirt Site! 
+Just wanted to let you know that your order has now been delivered. 
+
+Your Order ID is <%= @order.id %>.
+Your Order details are 
+Total amount paid: <%= @order.total %>
+
+
+<p><%= link_to "Feel free to browse around or check out our latest in store!", root_url %><br></p>
+
+<p><small>You recieved this email because you made an order on our site with <%= @publicuser.email %>.</small>
+</p>

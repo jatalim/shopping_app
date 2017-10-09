@@ -1,0 +1,13 @@
+<%= form_for @order, url: order_path(@order), method: :put do |f| %>
+	<div class = "row">
+  	<%= f.label :order_status_id %>
+  	</div>
+
+  	<div class = "row">
+  	<%= f.select :order_status_id, options_for_select(1..4) %>
+  	</div>
+
+  	<div class = "row">
+  	<%= f.submit "Update" %>
+	</div>
+ <%end%>
