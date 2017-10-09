@@ -34,7 +34,9 @@
     </article>
 
 
- <article class="col-md-4">
+  <!--// widget 3 //-->
+    <article class="col-md-4">
+
       <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title"><center>Orders</center></h3>
@@ -86,4 +88,88 @@
     </div>
     </article>
   </div>
-</section> 
+
+  <div id="adminTagTables" class="row">
+
+    <div id="product_tag_table">
+        <article class="col-md-7">
+          <div class="panel panel-default">
+
+              <div class="panel-heading">
+                <h3 class="panel-title"><center>Product &amp; Tags</center></h3>            
+              </div> 
+
+              <div class="panel-body">
+                <table class="table">
+                  <thead><center><th>Product</th><th>Tags</th></center></thead>
+                  <tbody>
+                    <% @products.each do |prod| %>
+                      <%= render "admins/product_tag_table", prod: prod %>
+                    <% end %>
+                  </tbody>
+                </table>
+              </div>
+
+          </div>
+        </article>
+
+    </div>
+
+    <div id="unassignedTags">
+     <article class="col-md-5">
+      <div class="panel panel-default">
+
+        <div class="panel-heading">
+          <h3 class="panel-title"><center>Unassigned Tags (<%= @floatingTags.count %>)</center></h3>
+        </div>
+
+        <div class="panel-body">
+          <center>
+                <% if !@floatingTags.blank? %>
+                  <% @floatingTags.each do |tag| %>
+
+                    <span><%= tag.name %></span>
+
+                  <% end %>  
+                <% else %>
+                  <p>No Unassigned Tags</p>
+                <% end %>
+       
+          </center>
+        </div>
+          
+      </div>
+     </article>
+    </div>
+
+    <!-- New Tag Form -->
+    <article class="col-md-5">
+      <div class="panel panel-default">
+        <div class="panel-body">
+           <div id="newTag">
+             <span id="tagForm">
+                <%= render "tags/new" %>
+             </span>
+           </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Create ProductTagging -->
+    <article class="col-md-5">
+      <div class="panel panel-default">
+         <div class="panel-heading">
+          <h3 class="panel-title"><center>Assign Tag to Product</center></h3>
+        </div>
+        <div class="panel-body">
+            <div id="assign_tag_product">
+              <%= render "product_taggings/new" %>
+            </div>
+        </div>
+      </div>
+    </article>
+  
+  </div>
+  
+</section>
+

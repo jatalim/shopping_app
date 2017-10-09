@@ -10,6 +10,7 @@ class OrderedProductsController < ApplicationController
 	end 
 
 	def create
+
     @payment = PaymentService.new(current_public_user).call  
     if @payment.success?
         @order = Order.create(:total => @payment.transaction.amount, :order_status_id => 2, :public_user_id => current_public_user.id)
@@ -23,5 +24,4 @@ class OrderedProductsController < ApplicationController
   def subtotal 
     cartedproducts.collect { |cartprod| cartprod.product_quantity * cartprod.product_price }.sum 
   end 
-
 end 

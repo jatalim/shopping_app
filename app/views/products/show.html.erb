@@ -89,6 +89,21 @@
                 <%= f.submit 'Add to Cart', class: "btn btn-success btn-xs" %>
             <% end %></span>
 
+            <% if admin_signed_in? %>
+
+              <% if !@tags.blank? %>
+                <div id="productTags">
+                  <h3>Product Tags</h3>
+                    <% @tags.each do |tag| %>
+                      <span class="tagItem"> <%= tag.name %> </span>
+                    <% end %>
+                </div>
+              <% else %>
+                <span>No Tags for this Product.</span>
+              <% end %>
+              
+            <% end %>
+
   </main>
 
 </div>

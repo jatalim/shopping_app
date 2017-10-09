@@ -9,13 +9,14 @@ root to: "products#index"
 
 get 'admins/dashboard' => 'admins#dashboard'
 get 'public_users/show' => 'public_users#show'
-post 'carted_products/qty' => 'carted_products#updateQuantity'
+put 'carted_products/qty' => 'carted_products#updateQuantity'
+delete 'carted_products/clearcart' => 'carted_products#clearCart'
 
   resources :products
   resources :carted_products
   resources :product_taggings
+  resources :tags
   resources :ordered_products
-
   resources :orders, only: [:edit, :update]
 
 post '/checkout' => 'ordered_products#create'

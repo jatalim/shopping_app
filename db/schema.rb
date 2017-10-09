@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 20171009052436) do
     t.index ["order_status_id"], name: "index_orders_on_order_status_id"
     t.index ["public_user_id"], name: "index_orders_on_public_user_id"
   end
-
+  
   create_table "product_taggings", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -111,7 +111,6 @@ ActiveRecord::Schema.define(version: 20171009052436) do
     t.string "uid"
     t.string "name"
     t.text "image"
-    t.boolean "admin", default: false
     t.index ["email"], name: "index_public_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_public_users_on_reset_password_token", unique: true
   end
@@ -131,4 +130,5 @@ ActiveRecord::Schema.define(version: 20171009052436) do
   add_foreign_key "orders", "public_users"
   add_foreign_key "product_taggings", "products"
   add_foreign_key "product_taggings", "tags"
+  
 end

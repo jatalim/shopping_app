@@ -1,0 +1,8 @@
+<%= form_for @tag, url: tags_path, method: :post do |f| %>
+
+  <div class="form-group">
+      <%= f.text_field :name , class: "form-control", id: "tagNameField", placeholder: "Tag name" %>
+      <%= f.submit "Add New Tag", class: "btn btn-primary pull-right" %>
+  </div>
+
+<% end %>

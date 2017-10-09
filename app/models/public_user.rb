@@ -29,6 +29,8 @@ class PublicUser < ApplicationRecord
 
   after_create :welcome_send
   def welcome_send
+
     RegistrationMailer.registration_mailer(self).deliver
+
   end
 end
