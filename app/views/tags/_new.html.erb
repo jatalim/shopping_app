@@ -1,15 +1,13 @@
-<%= form_for @productTag, url: product_taggings_path, method: :post do |f| %>
+<%= form_for @tag, url: tags_path, method: :post do |f| %>
 
   
   <div class="form-group">
       <%= f.label   :tag_name , class: "control-label "%>
-      <%= f.collection_select :tag_id , Tag.order(:name),:id, :name, class: "form-control"  %>
-  </div>
+      <%= f.text_field :name , class: "form-control"  %>
 
-  <div class="form-group">
-      <%= f.label   :product , class: "control-label "%>
-      <%= f.collection_select :product_id ,Product.order(:name),:id,:name, class: "form-control"  %>
   </div>
+  <%=  hidden_field_tag 'product[id]', @product.id %>
+  
 
   <%= f.submit "Add New Tag", class: "btn btn-success" %>
 

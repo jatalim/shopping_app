@@ -90,10 +90,20 @@
             <% end %></span>
 
             <% if admin_signed_in? %>
-            <span id="productTags">
-              <p>Product Tags</p>
-                <!-- list all product tags, link to add/remove -->
-            </span>
+
+              <% if !@tags.blank? %>
+                <span id="productTags">
+                  <p>Product Tags</p>
+                    <% @tags.each do |tag| %>
+                      <span class="tagItem"> <%= tag.name %> </span>
+                    <% end %>
+                </span>
+              <% end %>
+
+              <span id="tagForm">
+                <%= render "tags/new" %>
+              </span>
+              
             <% end %>
 
   </main>

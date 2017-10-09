@@ -29,6 +29,9 @@ before_action :authenticate_admin!,  only: [:new, :edit, :create, :update]
 
     def show 
       @product = Product.find(params[:id])
+      @tag = Tag.new  
+      @tag_ids = ProductTagging.where(product_id: @product.id).select(:tag_id)
+      @tags = Tag.where(id: @tag_ids)
       @cartedproduct = CartedProduct.new 
     end 
 

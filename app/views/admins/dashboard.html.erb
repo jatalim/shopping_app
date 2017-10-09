@@ -86,10 +86,9 @@
       </div>
     </article>
   </div>
-
-  <div id="tagSection" class="row">
-    <div>
-        <%= render "tags/new" %>
-    </div>
+  <% if admin_signed_in? %>
+  <div>
+    <h1>I AM SIGNED IN</h1>
   </div>
-</section>
+  <% end %>
+ </section>

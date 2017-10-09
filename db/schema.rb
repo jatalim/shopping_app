@@ -83,7 +83,6 @@ ActiveRecord::Schema.define(version: 20171005142002) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "admin", default: false
     t.string "provider"
     t.string "uid"
     t.string "name"
@@ -103,4 +102,5 @@ ActiveRecord::Schema.define(version: 20171005142002) do
   add_foreign_key "ordered_products", "products"
   add_foreign_key "product_taggings", "products"
   add_foreign_key "product_taggings", "tags"
+  
 end

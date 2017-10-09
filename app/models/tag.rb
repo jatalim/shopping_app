@@ -1,6 +1,8 @@
 class Tag < ApplicationRecord
 
-  belongs_to :post_taggings
-  has_many :products, :through => :post_taggings
+  has_many :product_taggings
+  has_many :products, :through => :product_taggings
+
+  validates :name, presence: true
 
 end
