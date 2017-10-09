@@ -41,44 +41,40 @@ hr{
 }
 
 .navbar-inverse {
+background-color: black;
   padding: 5px;
     margin-bottom: 0px;
 }
 
+.navbar-brand { 
+font-family: 'Open Sans' !important;
+font-size: 20px;
+}
 
 /*end of nav bar*/
+
+/*Carousel*/
+
+@media(max-width:800px){
+  .item img {
+    background-size:800px 300px;
+    min-height: 300px;
+  } 
+}
+
+.carousel-inner{
+height: 500px;
+width: 100%;
+}
+
+/*end of Carousel*/
+
 
 /* Products Index */
 
 
 .card {
     height: 100%;
-}
-
-
-.jumbotron {
-  background-image: asset-url("jumboshirt.jpg");
-  background-size: cover;
-  margin-top: -20px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  height:100%;
-}
-
-.jumbowords {
-
-  max-width: 80%;
-  color:white;
-  padding: 20px 40px 20px 40px;
-}
-
-/*black shadow on jumbotron image*/
-.overlayBg{
-  padding-top: 20px;
-  padding-bottom:20px;
-  height:100%;
-  background-color: rgba(0,0,0,0.3);
-
 }
 
 /*number input field*/
