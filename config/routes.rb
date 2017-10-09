@@ -16,6 +16,8 @@ post 'carted_products/qty' => 'carted_products#updateQuantity'
   resources :product_taggings
   resources :ordered_products
 
+  resources :orders, only: [:edit, :update]
+
 post '/checkout' => 'ordered_products#create'
 
 if Rails.env.development?

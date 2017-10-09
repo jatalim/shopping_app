@@ -6,12 +6,7 @@ class PaymentService
  end 
 
  def call 
-	@cartedproducts.each do |cartprod|
-	@product = Product.find(cartprod.product_id)
-	@total = @product.price*cartprod.product_quantity
-	end 
-	@total_amount = @cartedproducts.sum(@total)
-
+ 	@total_amount = @cartedproducts.collect { |cartprod| cartprod.product_quantity * cartprod.product_price }.sum 
     result = Braintree::Transaction.sale(
     :amount => @total_amount,
     :payment_method_nonce => 'fake-valid-nonce', 

@@ -6,6 +6,9 @@ class PublicUser < ApplicationRecord
          :omniauthable, :omniauth_providers => [:facebook]
 
    mount_uploader :avatar, AvatarUploader
+
+   has_many :orders, dependent: :destroy
+   has_many :carted_products, dependent: :destroy 
    
   def self.new_with_session(params, session)
     super.tap do |user|
