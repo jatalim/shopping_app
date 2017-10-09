@@ -22,6 +22,7 @@
 
 .byebug_history
 .ENV
+sendgrid.env
 
-# Ignore all uploaded photos
-/public/uploads
+/public/uploads/product/image
+

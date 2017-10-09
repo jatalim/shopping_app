@@ -6,6 +6,9 @@ class PublicUser < ApplicationRecord
          :omniauthable, :omniauth_providers => [:facebook]
 
    mount_uploader :avatar, AvatarUploader
+
+   has_many :orders, dependent: :destroy
+   has_many :carted_products, dependent: :destroy 
    
   def self.new_with_session(params, session)
     super.tap do |user|
@@ -26,6 +29,8 @@ class PublicUser < ApplicationRecord
 
   after_create :welcome_send
   def welcome_send
-    RegistrationMailer.registration_mailer(self).deliver_now
+
+    RegistrationMailer.registration_mailer(self).deliver
+
   end
 end

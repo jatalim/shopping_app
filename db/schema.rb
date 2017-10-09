@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171005142002) do
+ActiveRecord::Schema.define(version: 20171009052436) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,8 +38,18 @@ ActiveRecord::Schema.define(version: 20171005142002) do
     t.datetime "updated_at", null: false
     t.bigint "product_id"
     t.bigint "public_user_id"
+    t.decimal "product_price"
+    t.bigint "order_id"
+    t.index ["order_id"], name: "index_carted_products_on_order_id"
     t.index ["product_id"], name: "index_carted_products_on_product_id"
     t.index ["public_user_id"], name: "index_carted_products_on_public_user_id"
+  end
+
+  create_table "order_statuses", force: :cascade do |t|
+    t.integer "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "status_name"
   end
 
   create_table "ordered_products", force: :cascade do |t|
@@ -48,9 +58,23 @@ ActiveRecord::Schema.define(version: 20171005142002) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "product_id"
+    t.bigint "order_id"
+    t.index ["order_id"], name: "index_ordered_products_on_order_id"
     t.index ["product_id"], name: "index_ordered_products_on_product_id"
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.decimal "subtotal"
+    t.decimal "shipping"
+    t.decimal "total"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "order_status_id"
+    t.bigint "public_user_id"
+    t.index ["order_status_id"], name: "index_orders_on_order_status_id"
+    t.index ["public_user_id"], name: "index_orders_on_public_user_id"
+  end
+  
   create_table "product_taggings", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -97,9 +121,13 @@ ActiveRecord::Schema.define(version: 20171005142002) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "carted_products", "orders"
   add_foreign_key "carted_products", "products"
   add_foreign_key "carted_products", "public_users"
+  add_foreign_key "ordered_products", "orders"
   add_foreign_key "ordered_products", "products"
+  add_foreign_key "orders", "order_statuses"
+  add_foreign_key "orders", "public_users"
   add_foreign_key "product_taggings", "products"
   add_foreign_key "product_taggings", "tags"
   

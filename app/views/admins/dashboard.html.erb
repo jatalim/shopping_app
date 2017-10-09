@@ -33,62 +33,61 @@
       </div>
     </article>
 
+
   <!--// widget 3 //-->
     <article class="col-md-4">
+
       <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title"><center>Orders</center></h3>
           </div>
           <div class="panel-body">
             <div class="numeric-widget">
-            <center><h1>8</h1></center>
+            <center><h1><%=@orders.count%></h1></center>
             </div>
           </div>
       </div>
     </article>
-  </div> <!--// end row //-->
-  <div class="row">
-    <article class="col-md-6">
+  </div> 
+
+ <div class="row">
+    <article class="col-md-12">
      <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title"><center>Orders in Progress</center></h3>
+            <h3 class="panel-title"><center>All Orders</center></h3>
           </div>
-          <div class="panel-body">
-            <table class="table">
-            <thead><th>Order ID</th><th>Order Date</th><th>Expected Delivery Date</th></thead>
-            <tbody>
-              <tr class="day-past"><td>484</td><td>10 Oct 2017</td><td>20 Oct 2017</td></tr>
-              <tr><td>894</td><td>10 Oct 2017</td><td>21 Oct 2017</td></tr>
-              <tr><td>999</td><td>10 Oct 2017</td><td>22 Oct 2017</td></tr>
-              <tr><td>949</td><td>10 Oct 2017</td><td>30 Oct 2017</td></tr>
-            </tbody>
-          </table>
 
-          </div>
-      </div>
-    </article>
-    <article class="col-md-6">
-      <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title"><center>Completed Orders</center></h3>            
-          </div> 
           <div class="panel-body">
-          <table class="table">
-            <thead><center><th>Order ID</th><th>Order Date</th><th>Delivery Date</th></center></thead>
-            <tbody>
-              <tr class="day-past"><td>484</td><td>10 Oct 2017</td><td>20 Oct 2017</td></tr>
-              <tr><td>894</td><td>1 Sept 2017</td><td>21 Sept 2017</td></tr>
-              <tr><td>999</td><td>2 Sept 2017</td><td>22 Sept 2017</td></tr>
-              <tr><td>949</td><td>2 Sept 2017</td><td>30 Sept 2017</td></tr>
-            </tbody>
-          </table>
-      </div>
-      </div>
+              <table class="table">
+                <thead>
+                    <th>Order ID</th>
+                    <th>Order Date</th>
+                    <th>Expected Delivery Date</th>
+                    <th>Order Status</th>
+                    <th>Order Amount</th>
+                </thead>
+            
+                <tbody>
+                    <% @orders.each do |order| %>
+                      <tr class="day-past">
+                        <td><%=order.id%></td>
+                        <td><%=order.created_at.strftime("%d %b %Y")%></td>
+                        <td><% due_date = order.created_at+6.day %>
+                            <%= due_date.strftime("%d %b %Y") %></td>
+                        <td><%= order.order_status.status_name %>
+                        <%= link_to edit_order_path(id: order), class: 'btn btn-primary btn-xs' do%>
+                          <i class = "glyphicon glyphicon-pencil"></i> 
+                          <%end%>
+                        </td>
+                        <td>$<%= order.total %></td>
+                      <% end %>
+                      </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
     </article>
   </div>
-
-
-
 
   <div id="adminTagTables" class="row">
 

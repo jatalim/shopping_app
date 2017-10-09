@@ -17,9 +17,9 @@ delete 'carted_products/clearcart' => 'carted_products#clearCart'
   resources :product_taggings
   resources :tags
   resources :ordered_products
+  resources :orders, only: [:edit, :update]
 
 post '/checkout' => 'ordered_products#create'
-
 
 if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
