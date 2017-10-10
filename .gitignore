@@ -21,7 +21,7 @@
 /yarn-error.log
 
 .byebug_history
-.ENV
+.env
 sendgrid.env
 
 /public/uploads/product/image

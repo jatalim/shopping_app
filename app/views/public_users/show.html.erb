@@ -18,7 +18,7 @@
               
               <div class="col-md-1 col-xs-1">
               <% if current_public_user.image %>
-                <%= image_tag current_public_user.image %>  
+                <%= image_tag current_public_user.image.url %>  
               <% else %>
                 no image
               <% end %>
