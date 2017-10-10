@@ -1,0 +1,280 @@
+
+body {
+	font-size: 16px;
+}
+
+main {
+	display: block;
+	min-height: calc(100vh - 80px);
+
+	width: calc((100% - 80px) / 2);
+	margin-left: calc(((100% - 80px) / 2) + 80px);
+
+	text-align: center;
+	font-size: 16px;
+}
+
+main .inner {
+	width: calc(100% - 48px);
+	max-width: 480px;
+	margin: 80px auto 80px auto;
+}
+
+main h1 {
+	font-weight: normal;
+	font-size: 48px;
+	margin-bottom: 12px;
+}
+main .intro {
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 24px;
+	letter-spacing: 0.075em;
+	color: #000;
+	text-align: left;
+}
+main h3 {
+	font-weight: 400;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 0.275em;
+	display: table;
+	white-space: nowrap;
+	overflow: hidden;
+	margin-top: 42px;
+	margin-bottom: 36px;
+}
+main h3:before,
+main h3:after {
+  border-top: 2px solid #D8D8D8;
+  content: '';
+  display: table-cell;
+  position: relative;
+  top: 0.60em;
+  width: 45%;
+}
+main h3:before {
+  right: 1.75%;
+}
+main h3:after {
+  left: 1.5%;
+}
+
+main .config-options-wrapper {
+	padding-bottom: 48px;
+	border-bottom: 2px solid #D8D8D8;
+	margin-bottom: 48px;
+}
+main .config-options-wrapper ul,
+main .config-options-wrapper ul li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	font-size: 0px;
+}
+main .config-options-wrapper ul {
+	max-width: 325px;
+	margin: 14px auto 0 auto;
+}
+main .config-options-wrapper ul li {
+	display: inline-block;
+	vertical-align: top;
+
+	margin-bottom: 12px;
+
+	width: 65px;
+
+	font-size: 12px;
+	font-weight: 400;
+	letter-spacing: 0.075em;
+
+}
+main .config-options-wrapper input {
+	display: none;
+	width: 0;
+	height: 0;
+}
+main .config-options-wrapper label {
+	display: inline-block;
+	width: 100%;
+
+	position: relative;
+  
+  cursor: pointer;
+
+}
+main .config-options-wrapper label img {
+	display: block;
+	width: 44px;
+	height: 44px;
+	margin: 0 auto 8px auto;
+	border-radius: 100%;
+
+	background: #e5e5e5;
+}
+main .config-options-wrapper label span {
+	display: block;
+}
+
+
+main .config-options-wrapper label .faux-checked {
+	display: block;
+	width: 44px;
+	height: 44px;
+	border-radius: 100%;
+
+	overflow: visible;
+
+	
+
+	-webkit-transform: translateX(-50%) translateY(-50%) scale(1.0);
+	-moz-transform: translateX(-50%) translateY(-50%) scale(1.0);
+	-ms-transform: translateX(-50%) translateY(-50%) scale(1.0);
+	-o-transform: translateX(-50%) translateY(-50%) scale(1.0);
+	transform: translateX(-50%) translateY(-50%) scale(1.0);
+
+	position: absolute;
+	left: 50%;
+	top: 22px;
+
+	opacity: 0.0;
+
+	background: transparent;
+	background: url(#) no-repeat 0 0 transparent;
+	background-size: 100% 100%;
+
+	
+
+	border-image-slice: 1;
+
+	-webkit-transition: 
+		width 0.2s ease-out 0.05s, 
+		height 0.2s ease-out 0.05s, 
+		opacity 0.2s ease-out 0.05s, 
+		-webkit-transform 0.2s ease-out 0.05s;
+	-moz-transition: 
+		width 0.2s ease-out 0.05s, 
+		height 0.2s ease-out 0.05s, 
+		opacity 0.2s ease-out 0.05s, 
+		-moz-transform 0.2s ease-out 0.05s;
+	-ms-transition: 
+		width 0.2s ease-out 0.05s, 
+		height 0.2s ease-out 0.05s, 
+		opacity 0.2s ease-out 0.05s, 
+		-ms-transform 0.2s ease-out 0.05s;
+	-o-transition: 
+		width 0.2s ease-out 0.05s, 
+		height 0.2s ease-out 0.05s, 
+		opacity 0.2s ease-out 0.05s, 
+		-o-transform 0.2s ease-out 0.05s;
+    transition: 
+    	width 0.2s ease-out 0.05s, 
+    	height 0.2s ease-out 0.05s, 
+    	opacity 0.2s ease-out 0.05s, 
+    	transform 0.2s ease-out 0.05s;
+}
+
+main .config-options-wrapper label .faux-checked:before {
+	content: url(http://mattamyot.com/demos/watch-configurator/assets/option-checked.svg?1);
+
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+main .config-options-wrapper label .faux-checked:after {
+	content: url(http://mattamyot.com/demos/watch-configurator/assets/option-checked-check.svg);
+	/*background: lightgreen;*/
+
+	display: block;
+	width: 8px;
+	height: 8px;
+	/*border-radius: 100%;*/
+
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	-o-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+
+	position: absolute;
+	left: 7px;
+	top: 7px;
+
+	opacity: 0.0;
+
+	
+
+	-webkit-transition: 
+		width 0.2s ease-out 0.15s, 
+		height 0.2s ease-out 0.15s, 
+		opacity 0.2s ease-out 0.15s;
+	-moz-transition: 
+		width 0.2s ease-out 0.15s, 
+		height 0.2s ease-out 0.15s, 
+		opacity 0.2s ease-out 0.15s;
+	-ms-transition: 
+		width 0.2s ease-out 0.15s, 
+		height 0.2s ease-out 0.15s, 
+		opacity 0.2s ease-out 0.15s;
+	-o-transition: 
+		width 0.2s ease-out 0.15s, 
+		height 0.2s ease-out 0.15s, 
+		opacity 0.2s ease-out 0.15s;
+    transition: 
+    	width 0.2s ease-out 0.15s, 
+		height 0.2s ease-out 0.15s, 
+		opacity 0.2s ease-out 0.15s;
+}
+	
+
+
+main .config-options-wrapper label:active .faux-checked,
+main .config-options-wrapper label:active ~ label .faux-checked {
+	-webkit-transform: translateX(-50%) translateY(-50%) scale(1.45);
+	-moz-transform: translateX(-50%) translateY(-50%) scale(1.45);
+	-ms-transform: translateX(-50%) translateY(-50%) scale(1.45);
+	-o-transform: translateX(-50%) translateY(-50%) scale(1.45);
+	transform: translateX(-50%) translateY(-50%) scale(1.45);
+
+	opacity: 1.0;
+
+
+}
+main .config-options-wrapper label:active .faux-checked:after,
+main .config-options-wrapper label:active ~ label .faux-checked:after {
+	width: 8px;
+	height: 8px;
+	opacity: 0.0;
+}
+
+main .config-options-wrapper input:checked ~ label .faux-checked {
+	-webkit-transform: translateX(-50%) translateY(-50%) scale(1.2728);
+	-moz-transform: translateX(-50%) translateY(-50%) scale(1.2728);
+	-ms-transform: translateX(-50%) translateY(-50%) scale(1.2728);
+	-o-transform: translateX(-50%) translateY(-50%) scale(1.2728);
+	transform: translateX(-50%) translateY(-50%) scale(1.2728);
+
+	opacity: 1.0;
+}
+main .config-options-wrapper input:checked ~ label .faux-checked:after {
+	width: 14px;
+	height: 14px;
+	opacity: 1.0;
+}
+
+
+section.stage {
+	padding-top: 50px;
+	left: 0;
+	bottom: 0;
+	text-align: center;
+}
+
+
+#productTags{
+	margin-top:20px;
+}

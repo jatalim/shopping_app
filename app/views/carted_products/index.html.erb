@@ -1,0 +1,14 @@
+<h2> Your Shopping Cart </h2>
+
+<div class="container">
+
+  <div id="shopee">
+    <%= render 'carted_products/partial_in_a_partial' %>
+  </div>
+
+<%= button_to "Order Now", new_ordered_product_path, method: :get %>
+
+</div>
+
+
+

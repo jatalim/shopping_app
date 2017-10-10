@@ -1,0 +1,32 @@
+<% product = Product.find(cartprod.product_id) %>
+<tr id="productItem-<%= cartprod.id %>" class="row">
+
+    <td class="itemImage ">
+      <%= image_tag product.image.thumb %>
+    </td>
+
+    <td class="itemText ">
+      <h3><%= product.name %></h3>
+      <p><%= product.description %></p>
+    </td>
+
+    <td class="itemPrice ">
+      <p>$<%= product.price %></p>
+    </td>
+
+    <td class="itemQuantity ">
+      <!-- Change this to form - quantity able to be edited -->
+      <p><%= number_field_tag "carted_product[#{cartprod.id}]", cartprod.product_quantity, :id => "carted_product_#{cartprod.id}" %></p>
+    </td>
+
+    <td class="itemTotal ">
+      <p>$<%= product.price*cartprod.product_quantity %></p>
+    </td>
+
+    <td class="itemDelete ">
+      <!-- destroy function -->
+      <p><%= link_to carted_product_path(id: cartprod.id), method: :delete, remote: true do %><i class="glyphicon glyphicon-remove"></i><% end %></p>
+    </td>
+
+
+</tr>

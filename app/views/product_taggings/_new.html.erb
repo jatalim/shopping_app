@@ -1,0 +1,8 @@
+<%= form_for @productTagging, url: product_taggings_path, method: :post do |f| %>
+
+  <%= f.collection_select :tag_id, Tag.all, :id, :name %>
+  <%= f.collection_select :product_id, Product.all, :id, :name %>
+
+  <%= f.submit "Assign", class: "btn btn-primary pull-right" %>
+
+<% end %>

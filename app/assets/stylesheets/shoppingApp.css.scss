@@ -1,0 +1,156 @@
+
+/* Across all pages */
+.row{
+  margin-left:0px;
+  margin-right:0px;
+}
+
+hr{
+  border: 0;
+    border-bottom: 1px dashed #ccc;
+    background: #999;
+    width:80%;
+}
+
+.glyphicon-shopping-cart{
+  font-size:24px;
+}
+
+
+/*cart count badge*/
+.cartBadge{
+  position:relative;
+  top:-10px;
+  background:red;
+  border-radius: 15px;
+  color:white;
+  font-size:14px;
+
+}
+
+/*.cartBadge:hover{
+  background:#FF817F;
+}*/
+
+
+
+/*nav bar*/
+
+.navbar-right {
+  padding-right: 10px;
+}
+
+.navbar-inverse {
+background-color: black;
+  padding: 5px;
+    margin-bottom: 0px;
+}
+
+.navbar-brand { 
+font-family: 'Open Sans' !important;
+font-size: 20px;
+}
+
+/*end of nav bar*/
+
+/*Carousel*/
+
+@media(max-width:800px){
+  .item img {
+    background-size:800px 300px;
+    min-height: 300px;
+  } 
+}
+
+.carousel-inner{
+height: 500px;
+width: 100%;
+}
+
+/*end of Carousel*/
+
+
+/* Products Index */
+
+
+.card {
+    height: 100%;
+}
+
+/*number input field*/
+.numberBox{
+  width:50px;
+}
+
+/*End of Products Index*/
+
+
+/* -------- user edit profile ----------- */
+
+
+/*CartedProducts Index*/
+
+#shopping-cart{
+  h2{
+    text-align: left;
+  }
+  p{
+    font-size: 18px;
+  }
+
+  tr td{
+    vertical-align: middle;
+  }
+
+  .itemImage{
+    width:5%;
+  }
+
+}
+
+.glyphicon-remove{
+  color:red;
+}
+
+// td.itemQuantity input{
+//   width:100px;
+// }
+
+
+/*end of Carted Products*/
+
+/* user edit profile */
+
+
+.panel-title1, .deactivate {
+  text-align: center
+}
+
+
+/* -------- end of edit profile ----------- */
+
+
+
+/* --------- user profile show ----------------- */
+
+.username {
+  font-size: 20px;
+  font-weight: bold
+}
+
+.userlabel {
+  margin-left: 20px
+}
+
+.hrshow {
+  border-top: 3px double #8c8b8b;
+}
+
+.tagItem{
+  padding: 10px 10px 10px 10px;
+  background-color: rgba(177,177,177,0.2);
+  font-style: italic;
+}
+
+/* --------- end of user profile ----------------- */
+

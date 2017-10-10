@@ -1,0 +1,67 @@
+<table id="shopping-cart" class="table table-hover table-condensed">
+    
+    <% if !@cartedproducts.blank? %>
+    <thead id="shopping-cart-title">
+
+      <tr class="row">
+        <th class="col-md-2">
+          <h3>Item</h3>
+        </th>
+
+        <th class="col-md-4">
+          <h3>Description</h3>
+        </th>
+
+        <th class="col-md-2 ">
+          <h3>Price</h3>
+        </th>
+
+        <th class="col-md-1">
+          <h3>Qty</h3>
+        </th>
+
+        <th class="col-md-2">
+          <h3>Total</h3>
+        </th>
+        <th class="col-md-1">
+          <h3></h3>
+        </th>
+    </tr>
+    </thead>
+
+    
+
+        <tbody id="shopping-cart-items">
+        <%= form_for @updateProducts, url: carted_products_qty_path, method: :put do |f| %>
+           <% @cartedproducts.each do |cartprod| %>
+              <%= render 'carted_products/cartprod', :cartprod => cartprod %>        
+            <% end %>
+
+        </tbody>
+
+        <tfoot>
+          <tr>
+            <td>
+            <%= f.submit "Update form", class: "btn btn-primary" %>
+
+            <!-- end of form -->
+           </td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+          <%= link_to "Clear Cart Items", carted_products_clearcart_path,method: :delete,remote: true, class: "btn btn-danger", data: {confirm: "Are you sure?"}  %>
+        </td>
+      </tr>
+    </tfoot>
+        <% end %> 
+
+     <% else %>
+
+              <h3> There are no products in your cart! </h3>
+
+     <% end %>
+
+
+</table>
